@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 
 # ---------- CONFIG ----------
-openai.api_key = "openai.api_key = st.secrets["OPENAI_API_KEY"]"  # Replace with your valid key
+openai.api_key = openai.api_key = st.secrets["OPENAI_API_KEY"]  # Replace with your valid key
 st.set_page_config(page_title="IModel Chatbot", page_icon="⚽", layout="centered")
 
 # ---------- LOAD RULES ----------
@@ -90,4 +90,5 @@ if prompt := st.chat_input("Type your question..."):
     # Add assistant message
     st.session_state.chat.append(("assistant", reply))
     with st.chat_message("assistant"):
+
         st.markdown(reply)
